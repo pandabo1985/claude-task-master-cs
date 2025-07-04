@@ -414,7 +414,7 @@ async function updateTaskById(
 
 		if (appendMode) {
 			// Append mode: generate new content to add to task details
-			systemPrompt = `You are an AI assistant helping to append additional information to a software development task. You will be provided with the task's existing details, context, and a user request string.
+			systemPrompt = `You are an AI assistant helping to append additional information to a software development task. You will be provided with the task's existing details, context, and a user request string. Respond in Chinese.
 
 Your Goal: Based *only* on the user's request and all the provided context (including existing details if relevant to the request), GENERATE the new text content that should be added to the task's details.
 Focus *only* on generating the substance of the update.
@@ -442,7 +442,7 @@ Current Task Details (for context only):\n${taskToUpdate.details || '(No existin
 			}
 		} else {
 			// Full update mode: use original prompts
-			systemPrompt = `You are an AI assistant helping to update a software development task based on new context.
+			systemPrompt = `You are an AI assistant helping to update a software development task based on new context. Respond in Chinese.
 You will be given a task and a prompt describing changes or new implementation details.
 Your job is to update the task to reflect these changes, while preserving its basic structure.
 

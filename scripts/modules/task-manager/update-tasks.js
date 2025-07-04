@@ -370,7 +370,7 @@ async function updateTasks(
 
 		// --- Build Prompts (Unchanged Core Logic) ---
 		// Keep the original system prompt logic
-		const systemPrompt = `You are an AI assistant helping to update software development tasks based on new context.
+		const systemPrompt = `You are an AI assistant helping to update software development tasks based on new context. Respond in Chinese.
 You will be given a set of tasks and a prompt describing changes or new implementation details.
 Your job is to update the tasks to reflect these changes, while preserving their basic structure.
 

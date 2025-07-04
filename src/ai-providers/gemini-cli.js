@@ -187,7 +187,7 @@ export class GeminiCliProvider extends BaseAIProvider {
 		const isExpandTask =
 			systemMsg &&
 			systemMsg.content.includes(
-				'You are an AI assistant helping with task breakdown. Generate exactly'
+				'You are an AI assistant helping with task breakdown. Respond in Chinese. Generate exactly'
 			);
 
 		if (!isExpandTask) {
