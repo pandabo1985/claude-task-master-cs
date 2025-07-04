@@ -424,7 +424,7 @@ Taskmaster configuration (excluding API keys) is primarily managed through the `
     - Throws a specific error if the `tasks.json` file cannot be located.
     - Updates the `lastFoundProjectRoot` cache on success.
 - **`PROJECT_MARKERS`**: An exported array of common file/directory names used to identify a likely project root during the CLI fallback search.
-- **`getPackagePath()`**: Utility to find the installation path of the `task-master-ai` package itself (potentially removable).
+- **`getPackagePath()`**: Utility to find the installation path of the `task-master-ai-cs` package itself (potentially removable).
 
 ## MCP Server Tool Utilities (`mcp-server/src/tools/utils.js`)
 

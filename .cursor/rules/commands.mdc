@@ -584,7 +584,7 @@ For AI-powered commands that benefit from project context, follow the research c
   function displayUpgradeNotification(currentVersion, latestVersion) {
     const message = boxen(
       `${chalk.blue.bold('Update Available!')} ${chalk.dim(currentVersion)} → ${chalk.green(latestVersion)}\n\n` +
-      `Run ${chalk.cyan('npm i task-master-ai@latest -g')} to update to the latest version with new features and bug fixes.`,
+      `Run ${chalk.cyan('npm i task-master-ai-cs@latest -g')} to update to the latest version with new features and bug fixes.`,
       {
         padding: 1,
         margin: { top: 1, bottom: 1 },
@@ -659,4 +659,4 @@ function showRemoveSubtaskHelp() {
     '  task-master remove-subtask --id=\'5.2\' --convert',
     { padding: 1, borderColor: 'blue', borderStyle: 'round' }
   ));
-} 
+}

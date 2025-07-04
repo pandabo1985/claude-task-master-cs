@@ -1,8 +1,8 @@
 # Task Master [![GitHub stars](https://img.shields.io/github/stars/eyaltoledano/claude-task-master?style=social)](https://github.com/eyaltoledano/claude-task-master/stargazers)
 
-[![CI](https://github.com/eyaltoledano/claude-task-master/actions/workflows/ci.yml/badge.svg)](https://github.com/eyaltoledano/claude-task-master/actions/workflows/ci.yml) [![npm version](https://badge.fury.io/js/task-master-ai.svg)](https://badge.fury.io/js/task-master-ai) [![Discord](https://dcbadge.limes.pink/api/server/https://discord.gg/taskmasterai?style=flat)](https://discord.gg/taskmasterai) [![License: MIT with Commons Clause](https://img.shields.io/badge/license-MIT%20with%20Commons%20Clause-blue.svg)](LICENSE)
+[![CI](https://github.com/eyaltoledano/claude-task-master/actions/workflows/ci.yml/badge.svg)](https://github.com/eyaltoledano/claude-task-master/actions/workflows/ci.yml) [![npm version](https://badge.fury.io/js/task-master-ai-cs.svg)](https://badge.fury.io/js/task-master-ai-cs) [![Discord](https://dcbadge.limes.pink/api/server/https://discord.gg/taskmasterai?style=flat)](https://discord.gg/taskmasterai) [![License: MIT with Commons Clause](https://img.shields.io/badge/license-MIT%20with%20Commons%20Clause-blue.svg)](LICENSE)
 
-[![NPM Downloads](https://img.shields.io/npm/d18m/task-master-ai?style=flat)](https://www.npmjs.com/package/task-master-ai) [![NPM Downloads](https://img.shields.io/npm/dm/task-master-ai?style=flat)](https://www.npmjs.com/package/task-master-ai) [![NPM Downloads](https://img.shields.io/npm/dw/task-master-ai?style=flat)](https://www.npmjs.com/package/task-master-ai)
+[![NPM Downloads](https://img.shields.io/npm/d18m/task-master-ai-cs?style=flat)](https://www.npmjs.com/package/task-master-ai-cs) [![NPM Downloads](https://img.shields.io/npm/dm/task-master-ai-cs?style=flat)](https://www.npmjs.com/package/task-master-ai-cs) [![NPM Downloads](https://img.shields.io/npm/dw/task-master-ai-cs?style=flat)](https://www.npmjs.com/package/task-master-ai-cs)
 
 ## By [@eyaltoledano](https://x.com/eyaltoledano), [@RalphEcom](https://x.com/RalphEcom) & [@jasonzhou1993](https://x.com/jasonzhou1993)
 
@@ -75,7 +75,7 @@ MCP (Model Control Protocol) lets you run Task Master directly from your editor.
   "mcpServers": {
     "taskmaster-ai": {
       "command": "npx",
-      "args": ["-y", "--package=task-master-ai", "task-master-ai"],
+      "args": ["-y", "--package=task-master-ai-cs", "task-master-ai-cs"],
       "env": {
         "ANTHROPIC_API_KEY": "YOUR_ANTHROPIC_API_KEY_HERE",
         "PERPLEXITY_API_KEY": "YOUR_PERPLEXITY_API_KEY_HERE",
@@ -94,7 +94,7 @@ MCP (Model Control Protocol) lets you run Task Master directly from your editor.
 
 > 🔑 Replace `YOUR_…_KEY_HERE` with your real API keys. You can remove keys you don't use.
 
-> **Note**: If you see `0 tools enabled` in the MCP settings, try removing the `--package=task-master-ai` flag from `args`.
+> **Note**: If you see `0 tools enabled` in the MCP settings, try removing the `--package=task-master-ai-cs` flag from `args`.
 
 ###### VS Code (`servers` + `type`)
 
@@ -124,7 +124,7 @@ MCP (Model Control Protocol) lets you run Task Master directly from your editor.
 
 #### 2. (Cursor-only) Enable Taskmaster MCP
 
-Open Cursor Settings (Ctrl+Shift+J) ➡ Click on MCP tab on the left ➡ Enable task-master-ai with the toggle
+Open Cursor Settings (Ctrl+Shift+J) ➡ Click on MCP tab on the left ➡ Enable task-master-ai-cs with the toggle
 
 #### 3. (Optional) Configure the models you want to use
 
@@ -183,10 +183,10 @@ Use your AI assistant to:
 
 ```bash
 # Install globally
-npm install -g task-master-ai
+npm install -g task-master-ai-cs
 
 # OR install locally within your project
-npm install task-master-ai
+npm install task-master-ai-cs
 ```
 
 #### Initialize a new project

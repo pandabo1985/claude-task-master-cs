@@ -13,7 +13,6 @@ dev-debug.log
 init-debug.log
 
 # Source files not needed in the package
-src
 test
 tests
 docs
@@ -43,4 +42,4 @@ scripts/prd.txt
 node_modules/
 
 # Debug files
-*.debug 
+*.debug

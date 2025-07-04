@@ -13,7 +13,7 @@ MCP (Model Control Protocol) provides the easiest way to get started with Task M
 1. **Install the package**
 
 ```bash
-npm i -g task-master-ai
+npm i -g task-master-ai-cs
 ```
 
 2. **Add the MCP config to your IDE/MCP Client** (Cursor is recommended, but it works with other clients):
@@ -23,7 +23,7 @@ npm i -g task-master-ai
   "mcpServers": {
     "taskmaster-ai": {
       "command": "npx",
-      "args": ["-y", "--package=task-master-ai", "task-master-ai"],
+      "args": ["-y", "--package=task-master-ai-cs", "task-master-ai-cs"],
       "env": {
         "ANTHROPIC_API_KEY": "YOUR_ANTHROPIC_API_KEY_HERE",
         "PERPLEXITY_API_KEY": "YOUR_PERPLEXITY_API_KEY_HERE",
@@ -76,10 +76,10 @@ If you prefer to use the command line interface directly:
 
 ```bash
 # Install globally
-npm install -g task-master-ai
+npm install -g task-master-ai-cs
 
 # OR install locally within your project
-npm install task-master-ai
+npm install task-master-ai-cs
 ```
 
 Initialize a new project:
@@ -145,7 +145,7 @@ You can also set up the MCP server in Cursor settings:
 4. Configure with the following details:
    - Name: "Task Master"
    - Type: "Command"
-   - Command: "npx -y --package=task-master-ai task-master-ai"
+   - Command: "npx -y --package=task-master-ai-cs task-master-ai-cs"
 5. Save the settings
 
 Once configured, you can interact with Task Master's task management commands directly through Cursor's interface, providing a more integrated experience.

@@ -17,7 +17,7 @@ Add the following configuration to the user's MCP settings file (`.cursor/mcp.js
 	"mcpServers": {
 		"taskmaster-ai": {
 			"command": "npx",
-			"args": ["-y", "--package=task-master-ai", "task-master-ai"],
+			"args": ["-y", "--package=task-master-ai-cs", "task-master-ai-cs"],
 			"env": {
 				"ANTHROPIC_API_KEY": "user_will_add_their_key_here",
 				"PERPLEXITY_API_KEY": "user_will_add_their_key_here",
@@ -117,7 +117,7 @@ When adding keys to `.env` only, the `models` tool will explain that the keys ar
 
 ## CLI Fallback
 
-Taskmaster is also available via CLI commands, by installing with `npm install task-master-ai@latest` in a terminal. Running `task-master help` will show all available commands, which offer a 1:1 experience with the MCP server. As the AI agent, you should refer to the system prompts and rules provided to you to identify Taskmaster-specific rules that help you understand how and when to use it.
+Taskmaster is also available via CLI commands, by installing with `npm install task-master-ai-cs@latest` in a terminal. Running `task-master help` will show all available commands, which offer a 1:1 experience with the MCP server. As the AI agent, you should refer to the system prompts and rules provided to you to identify Taskmaster-specific rules that help you understand how and when to use it.
 
 ## Next Steps
 

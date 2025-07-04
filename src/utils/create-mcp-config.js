@@ -43,9 +43,9 @@ export function setupMCPConfiguration(projectRoot, mcpConfigPath) {
 
 	// New MCP config to be added - references the installed package
 	const newMCPServer = {
-		'task-master-ai': {
+		'task-master-ai-cs': {
 			command: 'npx',
-			args: ['-y', '--package=task-master-ai', 'task-master-ai'],
+			args: ['-y', '--package=task-master-ai-cs', 'task-master-ai-cs'],
 			env: {
 				ANTHROPIC_API_KEY: 'ANTHROPIC_API_KEY_HERE',
 				PERPLEXITY_API_KEY: 'PERPLEXITY_API_KEY_HERE',
@@ -68,7 +68,7 @@ export function setupMCPConfiguration(projectRoot, mcpConfigPath) {
 	if (fs.existsSync(mcpPath)) {
 		log(
 			'info',
-			'MCP configuration file already exists, checking for existing task-master-ai...'
+			'MCP configuration file already exists, checking for existing task-master-ai-cs...'
 		);
 		try {
 			// Read existing config
@@ -77,31 +77,34 @@ export function setupMCPConfiguration(projectRoot, mcpConfigPath) {
 			if (!mcpConfig.mcpServers) {
 				mcpConfig.mcpServers = {};
 			}
-			// Check if any existing server configuration already has task-master-ai in its args
+			// Check if any existing server configuration already has task-master-ai-cs in its args
 			const hasMCPString = Object.values(mcpConfig.mcpServers).some(
 				(server) =>
 					server.args &&
 					Array.isArray(server.args) &&
 					server.args.some(
-						(arg) => typeof arg === 'string' && arg.includes('task-master-ai')
+						(arg) =>
+							typeof arg === 'string' &&
+							arg.includes('task-master-ai-cs')
 					)
 			);
 			if (hasMCPString) {
 				log(
 					'info',
-					'Found existing task-master-ai MCP configuration in mcp.json, leaving untouched'
+					'Found existing task-master-ai-cs MCP configuration in mcp.json, leaving untouched'
 				);
 				return; // Exit early, don't modify the existing configuration
 			}
-			// Add the task-master-ai server if it doesn't exist
-			if (!mcpConfig.mcpServers['task-master-ai']) {
-				mcpConfig.mcpServers['task-master-ai'] = newMCPServer['task-master-ai'];
+			// Add the task-master-ai-cs server if it doesn't exist
+			if (!mcpConfig.mcpServers['task-master-ai-cs']) {
+				mcpConfig.mcpServers['task-master-ai-cs'] =
+					newMCPServer['task-master-ai-cs'];
 				log(
 					'info',
-					'Added task-master-ai server to existing MCP configuration'
+					'Added task-master-ai-cs server to existing MCP configuration'
 				);
 			} else {
-				log('info', 'task-master-ai server already configured in mcp.json');
+				log('info', 'task-master-ai-cs server already configured in mcp.json');
 			}
 			// Write the updated configuration
 			fs.writeFileSync(mcpPath, formatJSONWithTabs(mcpConfig) + '\n');
@@ -134,7 +137,7 @@ export function setupMCPConfiguration(projectRoot, mcpConfigPath) {
 	}
 
 	// Add note to console about MCP integration
-	log('info', 'MCP server will use the installed task-master-ai package');
+	log('info', 'MCP server will use the installed task-master-ai-cs package');
 }
 
 /**
@@ -186,13 +189,15 @@ export function removeTaskMasterMCPConfiguration(projectRoot, mcpConfigPath) {
 
 		// Check if Task Master is configured
 		const hasTaskMaster =
-			mcpConfig.mcpServers['task-master-ai'] ||
+			mcpConfig.mcpServers['task-master-ai-cs'] ||
 			Object.values(mcpConfig.mcpServers).some(
 				(server) =>
 					server.args &&
 					Array.isArray(server.args) &&
 					server.args.some(
-						(arg) => typeof arg === 'string' && arg.includes('task-master-ai')
+						(arg) =>
+							typeof arg === 'string' &&
+							arg.includes('task-master-ai-cs')
 					)
 			);
 
@@ -206,23 +211,25 @@ export function removeTaskMasterMCPConfiguration(projectRoot, mcpConfigPath) {
 			return result;
 		}
 
-		// Remove task-master-ai server
-		delete mcpConfig.mcpServers['task-master-ai'];
+		// Remove task-master-ai-cs server
+		delete mcpConfig.mcpServers['task-master-ai-cs'];
 
-		// Also remove any servers that have task-master-ai in their args
+		// Also remove any servers that have task-master-ai-cs in their args
 		Object.keys(mcpConfig.mcpServers).forEach((serverName) => {
 			const server = mcpConfig.mcpServers[serverName];
 			if (
 				server.args &&
 				Array.isArray(server.args) &&
 				server.args.some(
-					(arg) => typeof arg === 'string' && arg.includes('task-master-ai')
+					(arg) =>
+						typeof arg === 'string' &&
+						arg.includes('task-master-ai-cs')
 				)
 			) {
 				delete mcpConfig.mcpServers[serverName];
 				log(
 					'debug',
-					`[MCP Config] Removed server '${serverName}' containing task-master-ai`
+					`[MCP Config] Removed server '${serverName}' containing task-master-ai-cs`
 				);
 			}
 		});
